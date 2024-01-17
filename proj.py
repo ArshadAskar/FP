@@ -10,34 +10,53 @@ smb = pd.read_csv(file_path1)
 emp = pd.read_csv(file_path2)
 
 # Filter out rows for London
-smb =  smb[smb['Area name'] != 'London']
-emp =  emp[emp['Area name'] != 'London']
+smb =  smb[(smb['Area name'] != 'London') & smb['Area name'] != 'Mean']
+emp =  emp[(emp['Area name'] != 'London') & emp['Area name'] != 'Mean']
 
 
 # Display the first few rows
 print(emp.head())
 
 #Plotting a line graph for suicide rates
-plt.plot(smb['Area name'],smb['2005'],label=('2005'))
-plt.plot(smb['Area name'],smb['2009'],label=('2009'))
-plt.plot(smb['Area name'],smb['2014'],label=('2014'))
-plt.xticks(rotation=90)
+#plt.plot(smb['Area name'],smb['2009'],label=('2009'))
+#plt.plot(smb['Area name'],smb['2005'],label=('2005'))
+#plt.plot(smb['Area name'],smb['2014'],label=('2014'))
+#plt.xticks(rotation=90)
 
 #labelling
-plt.title("Graph showing suicide rates per 100000 people in all London boroughs")
-plt.xlabel("Boroughs")
-plt.ylabel("Suicide rate (per 100000)")
-plt.legend()
-plt.show()
+#plt.title("Graph showing suicide rates per 100000 people in all London boroughs")
+#plt.xlabel("Boroughs")
+#plt.ylabel("Suicide rate (per 100000)")
+#plt.legend()
+#plt.show()
+
+#Plotting a line graph for economically active people
+#plt.plot(emp['Area name'],emp['2005'],label=('2005'))
+#plt.plot(emp['Area name'],emp['2009'],label=('2009'))
+#plt.plot(emp['Area name'],emp['2014'],label=('2014'))
+#plt.xticks(rotation=90)
+
+#labelling
+#plt.title("Graph showing economically active people in all London boroughs")
+#plt.xlabel("Boroughs")
+#plt.ylabel("Employed people")
+#plt.legend()
+#plt.show()
+
+
+camden_data = emp[emp['Area name'] == 'Camden']
+cam_index = camden_data.iloc[0,1:].tolist()
+camden_emp = cam_index
+print(camden_emp)
+years = np.array([2005,2006,2007,2008,2009,2010,2011,2012,2013,2014])
 
 #Plotting a line graph for suicide rates
-plt.plot(emp['Area name'],emp['2005'],label=('2005'))
-plt.plot(emp['Area name'],emp['2009'],label=('2009'))
-plt.plot(emp['Area name'],emp['2014'],label=('2014'))
+plt.plot(years,camden_emp)
+
 plt.xticks(rotation=90)
 
 #labelling
-plt.title("Graph showing economically active people in all London boroughs")
+plt.title("Graph showing economically active people in Camden")
 plt.xlabel("Boroughs")
 plt.ylabel("Employed people")
 plt.legend()
