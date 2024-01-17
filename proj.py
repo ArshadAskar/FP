@@ -17,8 +17,7 @@ emp =  emp[emp['Area name'] != 'London']
 # Display the first few rows
 print(emp.head())
 
-
-#Plotting
+#Plotting a line graph for suicide rates
 plt.plot(smb['Area name'],smb['2005'],label=('2005'))
 plt.plot(smb['Area name'],smb['2009'],label=('2009'))
 plt.plot(smb['Area name'],smb['2014'],label=('2014'))
@@ -28,5 +27,18 @@ plt.xticks(rotation=90)
 plt.title("Graph showing suicide rates per 100000 people in all London boroughs")
 plt.xlabel("Boroughs")
 plt.ylabel("Suicide rate (per 100000)")
+plt.legend()
+plt.show()
+
+#Plotting a line graph for suicide rates
+plt.plot(emp['Area name'],emp['2005'],label=('2005'))
+plt.plot(emp['Area name'],emp['2009'],label=('2009'))
+plt.plot(emp['Area name'],emp['2014'],label=('2014'))
+plt.xticks(rotation=90)
+
+#labelling
+plt.title("Graph showing economically active people in all London boroughs")
+plt.xlabel("Boroughs")
+plt.ylabel("Employed people")
 plt.legend()
 plt.show()
