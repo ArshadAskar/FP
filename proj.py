@@ -15,7 +15,7 @@ emp =  emp[(emp['Area name'] != 'London') & emp['Area name'] != 'Mean']
 
 
 # Display the first few rows
-print(emp.head())
+print(smb)
 
 #Plotting a line graph for suicide rates
 #plt.plot(smb['Area name'],smb['2009'],label=('2009'))
@@ -44,11 +44,11 @@ print(emp.head())
 #plt.show()
 
 
-camden_data = emp[emp['Area name'] == 'Camden']
-cam_index = camden_data.iloc[0,1:].tolist()
-camden_emp = cam_index
+#camden_data = emp[emp['Area name'] == 'Camden']
+#cam_index = camden_data.iloc[0,1:].tolist()
+#camden_emp = cam_index
 
-years = np.array([2005,2006,2007,2008,2009,2010,2011,2012,2013,2014])
+#years = np.array([2005,2006,2007,2008,2009,2010,2011,2012,2013,2014])
 
 #Plotting a line graph for suicide rates
 #plt.plot(years,camden_emp)
@@ -62,21 +62,21 @@ years = np.array([2005,2006,2007,2008,2009,2010,2011,2012,2013,2014])
 #plt.legend()
 #plt.show()
 
-mean_suicide = smb[smb['Area name'] == 'Mean']
-suic_index = mean_suicide.iloc[0,1:].tolist()
-meansuicide_emp = suic_index
+#mean_suicide = smb[smb['Area name'] == 'Mean']
+#suic_index = mean_suicide.iloc[0,1:].tolist()
+#meansuicide_emp = suic_index
 
-mean_employment = emp[emp['Area name'] == 'Mean']
-emp_index = mean_employment.iloc[0,1:].tolist()
-meanemp_emp = emp_index
+#mean_employment = emp[emp['Area name'] == 'Mean']
+#emp_index = mean_employment.iloc[0,1:].tolist()
+#meanemp_emp = emp_index
 
 
-plt.plot(years,camden_emp,label='Camden')
-plt.plot(years,meanemp_emp,label='Mean')
+#plt.plot(years,camden_emp,label='Camden')
+#plt.plot(years,meanemp_emp,label='Mean')
 
 #labelling
-plt.title("Graph showing economically active people in Camden compared to the mean")
-plt.xlabel("Years")
-plt.ylabel("Employed people")
-plt.legend()
-plt.show()
+#plt.title("Graph showing economically active people in Camden compared to the mean")
+#plt.xlabel("Years")
+#plt.ylabel("Employed people")
+#plt.legend()
+#plt.show()
