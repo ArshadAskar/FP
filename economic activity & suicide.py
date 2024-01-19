@@ -47,6 +47,9 @@ plt.subplots_adjust(bottom=0.3)  # The value is a fraction of the figure height.
 plt.legend()
 plt.show()
 
+# X-axis
+years = np.array([2005,2006,2007,2008,2009,2010,2011,2012,2013,2014])
+
 # Getting the data into a list
 camden_data = emp[emp['Area name'] == 'Camden']
 cam_index = camden_data.iloc[0,1:].tolist()
@@ -63,8 +66,6 @@ westminster_emp = west_index
 Southwark_data = emp[emp['Area name'] == 'Southwark']
 south_index = Southwark_data.iloc[0,1:].tolist()
 Southwark_emp = south_index
-
-years = np.array([2005,2006,2007,2008,2009,2010,2011,2012,2013,2014])
 
 camden_suicide_data = smb[smb['Area name'] == 'Camden']
 camden_index = camden_suicide_data.iloc[0,1:].tolist()
