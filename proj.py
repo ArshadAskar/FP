@@ -153,16 +153,38 @@ for i in range(len(Mean_high_suicide3)):
 
 
 # Graph for HSB suicide rates and HSB economically active population
-fig,ax1 = plt.subplots()
-qual1,= ax1.plot(years,Mean_high_suicide4,marker='o',color = 'blue',label=("Suicide average"))
-ax2 = ax1.twinx()
-qual2, = ax2.plot(years,Mean_high_suicide2,marker='o',color ='red',label=("Economically active average"))
-plt.xticks(years,rotation = "vertical")
+#fig,ax1 = plt.subplots()
+#qual1,= ax1.plot(years,Mean_high_suicide4,marker='o',color = 'blue',label=("Suicide average"))
+#ax2 = ax1.twinx()
+#qual2, = ax2.plot(years,Mean_high_suicide2,marker='o',color ='red',label=("Economically active average"))
+#plt.xticks(years,rotation = "vertical")
 
 # Labelling
-plt.title("Graph showing high suicide boroughs suicide rates (per 100,000) and their economically active population")
+#plt.title("Graph showing high suicide boroughs suicide rates (per 100,000) and their economically active population")
+#ax1.set_xlabel("Time (Years)")
+#ax1.set_ylabel('Suicide average (per 100,000)')
+#ax2.set_ylabel("Economically active average")
+#ax1.legend(handles=[qual1, qual2])
+#plt.show()
+    
+fig,ax1 = plt.subplots()
+qual3,= ax1.plot(years,meansuicide_smb,marker='o',color = 'black',label=("Suicide average"),linestyle='--')
+ax2 = ax1.twinx()
+qual4, = ax2.plot(years,meanemp_emp,marker='x',color ='red',label=("Economically active average"),linestyle='--')
+plt.xticks(years,rotation = "vertical")
+ax1.grid(True, which='both', linestyle='-.', linewidth=0.5, alpha=0.5)
+
+
+# Labelling
+plt.title("Graph showing London average suicide rates (per 100,000) and their average economically active population")
 ax1.set_xlabel("Time (Years)")
 ax1.set_ylabel('Suicide average (per 100,000)')
 ax2.set_ylabel("Economically active average")
-ax1.legend(handles=[qual1, qual2])
+ax1.legend(handles=[qual3, qual4])
+ax1.text(2006,10.7, 'Correlation coefficient = - 0.91', fontsize=12, color='black', style='italic')
 plt.show()
+corr = np.corrcoef(meanemp_emp,meansuicide_smb)[0,1]
+print(corr)
+
+### learn to put correlation coefficent inside the diagram -- headline figure
+## make it look nicer
