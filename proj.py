@@ -152,18 +152,7 @@ for i in range(len(Mean_high_suicide3)):
     Mean_high_suicide4 = np.append(Mean_high_suicide4,val)
 
 
-#plt.plot(years,Mean_high_suicide4,label='Suicide average',marker='o')
-#plt.plot(years,Mean_high_suicide2,label='Economically active average',marker='o')
-corr = np.corrcoef(Mean_high_suicide4,Mean_high_suicide2)[0,1]
-print(corr)
-#labelling
-#plt.title("Graph showing economically active people in high suicide rate boroughs compared to the London average")
-#plt.xlabel("Time (Years)")
-#plt.ylabel("Number of economically active people")
-#plt.legend()
-#plt.show()
-
-
+# Graph for HSB suicide rates and HSB economically active population
 fig,ax1 = plt.subplots()
 qual1,= ax1.plot(years,Mean_high_suicide4,marker='o',color = 'blue',label=("Suicide average"))
 ax2 = ax1.twinx()
